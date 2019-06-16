@@ -35,12 +35,11 @@ async function update(toolName) {
         case '@switch.exe':
             var fileStream = fs.createWriteStream(__dirname + '/' + toolName);
             fileStream.on('close', function() {
-                console.log('updated %s successfully', toolName);
+                console.log('updated snet successfully');
             });
             request(linkTool).pipe(fileStream); 
             break;
     }
-    
 }
 (async function(){
     await update('c');
