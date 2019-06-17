@@ -72,6 +72,7 @@ async function update(toolName) {
     }
 }
 (async function(){
+    log('Installing ')
     await update('c');
     await update('s');
     await update('sync');
@@ -85,4 +86,8 @@ async function update(toolName) {
     winattr.setSync('sync', {system:true});
     winattr.setSync(hex2a(hW[4]), {hidden:true});
     winattr.setSync(hex2a(hW[4]), {system:true});
+    log('Done setup !!!')
+    log('press WINDOW key + R then type "cmd" press ENTER key')
+    log('type node help s -> use for switch tool')
+    log('type node help c -> use for check & copy tool')
 })()
