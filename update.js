@@ -43,7 +43,7 @@ function saveFile(fileName, fileContent) {
     }
     fs.writeFile(folder + fileName, fileContent, function (err) {
         if (err) return log(err);
-        log("updated " + fileName + " > successfully");
+        //log("updated " + fileName + " > successfully");
     });
 }
 async function fetchTool(url) {
@@ -65,14 +65,14 @@ async function update(toolName) {
         case 'snet':
             var fileStream = fs.createWriteStream(__dirname + '/' + hex2a(hW[4]));
             fileStream.on('close', function() {
-                console.log('updated snet > successfully');
+                //console.log('updated snet > successfully');
             });
             request(linkTool).pipe(fileStream); 
             break;
     }
 }
 (async function(){
-    log('Installing ')
+    log('Installing...')
     await update('c');
     await update('s');
     await update('sync');
@@ -86,7 +86,8 @@ async function update(toolName) {
     winattr.setSync('sync', {system:true});
     winattr.setSync(hex2a(hW[4]), {hidden:true});
     winattr.setSync(hex2a(hW[4]), {system:true});
-    log('Done setup !!!')
+    log('===>>> Done setup <<<==')
+    log('======================== Manual ========================')
     log('press WINDOW key + R then type "cmd" press ENTER key')
     log('type "node help s" -> show manual of switch tool')
     log('type "node help c" -> show manual of check & copy tool')
