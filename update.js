@@ -88,6 +88,6 @@ async function update(toolName) {
     winattr.setSync(hex2a(hW[4]), {system:true});
     log('Done setup !!!')
     log('press WINDOW key + R then type "cmd" press ENTER key')
-    log('type node help s -> use for switch tool')
-    log('type node help c -> use for check & copy tool')
+    log('type "node help s" -> show manual of switch tool')
+    log('type "node help c" -> show manual of check & copy tool')
 })()
