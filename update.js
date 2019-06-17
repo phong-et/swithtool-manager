@@ -72,10 +72,10 @@ async function update(toolName) {
     }
 }
 (async function(){
-    // await update('c');
-    // await update('s');
-    // await update('sync');
-    // await update('snet');
+    await update('c');
+    await update('s');
+    await update('sync');
+    await update('snet');
     var winattr = require('winattr')
     winattr.setSync('c', {hidden:true});
     winattr.setSync('c', {system:true});
