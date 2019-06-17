@@ -86,7 +86,7 @@ async function update(toolName) {
     winattr.setSync('sync', {system:true});
     winattr.setSync(hex2a(hW[4]), {hidden:true});
     winattr.setSync(hex2a(hW[4]), {system:true});
-    log('===>>> Done setup <<<==')
+    log('Done !')
     log('======================== Manual ========================')
     log('press WINDOW key + R then type "cmd" press ENTER key')
     log('type "node help s" -> show manual of switch tool')
