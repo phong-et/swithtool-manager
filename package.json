@@ -4,12 +4,11 @@
   "description": "help switch project fasty",
   "main": "install.js",
   "scripts": {
-    "setup": "npm install && node update"
+    "setup": "npm install && node setup && node update"
   },
   "author": "phillip",
   "license": "ISC",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.3",
     "cli-color": "^1.4.0",
     "fs-extra": "^8.0.1",
     "npm": "^6.9.0",
