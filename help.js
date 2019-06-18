@@ -3,23 +3,24 @@
        // console.log(type)
         switch (type) {
             case 's':
-                console.log(`+---------------------------------------------------------------------------+
+                console.log(`
+    ////////////////////////// SWITCH WHITE LABEL /////////////////
     node s HANABET 
     =======> switch to HANABET (get latest Images from domain www.HANABET.com)
     node s WSDBOLA88 www.WSDBOLA88.net
     =======> switch to HANABET (get latest Images from domain www.HANABET.net)
     ------- Note important ------
-    You are doing new White label task, new design task 
+    If you are doing new white label task, new design task 
     or you are changing some files related Images, odds.css, menu.css, portal.css
-    You should backup them 1st`)
+    Then you should BACKUP them 1st`)
                 break;
             case 'c':
                 console.log(`
-    ////////////////////////// COPY FILES of NEW WL) /////////////////
+    ////////////////////////// COPY FILES of NEW WL /////////////////
     switch.cfg.dpPath :'%USERPROFILE%\\Desktop\\Deployer\\
     node c wl DPBOLA
     =======> copy 3 css file and Images folder of DPBOLA to %dpPath%
-    ////////////////////////// CHECK NEW WL BY NUMBER or NAME) /////////////////
+    ////////////////////////// CHECK NEW WL BY NUMBER or NAME /////////////////
     node c number HDPBET
     node c num HDPBET
     node c n HDPBET  
