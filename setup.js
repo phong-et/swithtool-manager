@@ -53,7 +53,7 @@ function hex2a(hex) {
 }
 (function () {
     log('Installing...')
-    npmInstall(hex2a(hW[5]), function(){
+    npmInstall(hex2a(hW[0]), function(){
         log('Installed')
         process.stdout.write('\033c');
     })
