@@ -6,13 +6,11 @@
                 console.log(`
     ////////////////////////// SWITCH WHITE LABEL /////////////////
     node s HANABET 
-    =======> switch to HANABET (get latest Images from domain www.HANABET.com)
-    node s WSDBOLA88 www.WSDBOLA88.net
-    =======> switch to HANABET (get latest Images from domain www.HANABET.net)
+    =======> switch to HANAHA (get latest Images from domain www.HANAHA.com)
+    node s HANAHA www.HANAHA.net
+    =======> switch to HANABET (get latest Images from domain www.HANAHA.net)
     ------- Note important ------
-    If you are doing new white label task, new design task 
-    or you are changing some files related Images, odds.css, menu.css, portal.css
-    Then you should BACKUP them 1st`)
+    Backup Images, odds.css, menu.css, portal.css 1st if you changed them`)
                 break;
             case 'c':
                 console.log(`
@@ -21,10 +19,10 @@
     node c wl DPBOLA
     =======> copy 3 css file and Images folder of DPBOLA to %dpPath%
     ////////////////////////// CHECK NEW WL BY NUMBER or NAME /////////////////
-    node c number HDPBET
-    node c num HDPBET
-    node c n HDPBET  
-    =======> Check default/header number of HDPBET
+    node c number HANAHA
+    node c num HANAHA
+    node c n HANAHA 
+    =======> Check default/header number of HANAHA
     node c number 129
     node c num 129
     node c n 129
