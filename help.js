@@ -16,8 +16,8 @@
                 console.log(`
     ////////////////////////// COPY FILES of NEW WL /////////////////
     switch.cfg.dpPath :'%USERPROFILE%\\Desktop\\Deployer\\
-    node c wl DPBOLA
-    =======> copy 3 css file and Images folder of DPBOLA to %dpPath%
+    node c wl HANAHA
+    =======> copy 3 css file and Images folder of HANAHA to %dpPath%
     ////////////////////////// CHECK NEW WL BY NUMBER or NAME /////////////////
     node c number HANAHA
     node c num HANAHA
