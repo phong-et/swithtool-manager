@@ -1,22 +1,16 @@
+
 {
-  "name": "switchtool",
-  "version": "1.0.0",
-  "description": "help switch project fasty",
-  "main": "install.js",
-  "scripts": {
-    "setup": "npm install && node update"
-  },
-  "author": "phillip",
-  "license": "ISC",
-  "dependencies": {
-    "cheerio": "^1.0.0-rc.3",
-    "cli-color": "^1.4.0",
-    "fs-extra": "^8.0.1",
-    "npm": "^6.9.0",
-    "request": "^2.88.0",
-    "request-promise": "^4.2.4",
-    "rimraf": "^2.6.3",
-    "shelljs": "^0.8.3",
-    "winattr": "^3.0.0"
-  }
+    "name": "switchtool",
+    "version": "1.0.0",
+    "description": "help switch project fasty",
+    "main": "install.js",
+    "scripts": {
+        "setup": "node delete && npm install && npm audit fix && node setup && node update"
+    },
+    "author": "phillip",
+    "license": "ISC",
+    "dependencies": {
+        "npm": "^6.9.0"
+    }
 }
+        
